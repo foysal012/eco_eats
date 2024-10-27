@@ -1,5 +1,5 @@
 import 'package:eco_eats/resource/app_colors/app_colors.dart';
-import 'package:eco_eats/screen/authentication/signin_screen.dart';
+import 'package:eco_eats/screen/authentication/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -13,8 +13,8 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Future.delayed(const Duration(seconds: 3), () {
-       Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SignInScreen(),));
+    Future.delayed(const Duration(seconds: 2), () {
+       Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SignUpScreen()));
     },);
     super.initState();
   }
@@ -28,9 +28,9 @@ class _SplashScreenState extends State<SplashScreen> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Center(child: Image.asset('assets/images/splash.png', fit: BoxFit.cover,)),
-          Gap(MediaQuery.sizeOf(context).height * 0.2),
+          const Gap(190),
           const CircularProgressIndicator( color: Colors.white,),
-          Gap(MediaQuery.sizeOf(context).height * 0.02),
+          const Gap(12),
           const Text('Design & Developed by',
             style: TextStyle(
                 fontSize: 14,
@@ -46,7 +46,7 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
           ),
 
-          Gap(MediaQuery.sizeOf(context).height * 0.05),
+          const Gap(35),
 
 
         ],

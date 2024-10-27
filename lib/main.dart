@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'screen/authentication/signin_screen.dart';
 import 'screen/authentication/signup_screen.dart';
+import 'screen/bottom_nav_bar/bottom_nav_bar.dart';
 import 'screen/splash/splash_screen.dart';
 
 void main() {
@@ -24,9 +25,10 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      // home: const SplashScreen(),
+      home: const SplashScreen(),
       // home: const SignInScreen(),
-      home: const SignUpScreen(),
+      // home: const SignUpScreen(),
+      //home: const BottomNavBar(),
     );
   }
 }
