@@ -371,15 +371,9 @@ class _HomePageState extends State<HomePage> {
                                       width: 35,
                                       decoration: BoxDecoration(
                                           color: AppColors.primaryColor,
-                                          // borderRadius: BorderRadius.only(
-                                          //     bottomLeft: Radius.circular(5),
-                                          //     topRight: Radius.circular(10),
-                                          //     topLeft: Radius.circular(5),
-                                          //     bottomRight: Radius.circular(5)
-                                          // ),
                                         shape: BoxShape.circle
                                       ),
-                                      child: Icon(Icons.heart_broken, color: Colors.white,),
+                                      child: Icon(Icons.favorite, color: Colors.white,),
                                     ),
                                   ),
                                 )
