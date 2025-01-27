@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:gap/gap.dart';
 
-class FruitsDetailsPage extends StatefulWidget {
-  const FruitsDetailsPage({super.key});
+class ProductDetailsPage extends StatefulWidget {
+  const ProductDetailsPage({super.key});
 
   @override
-  State<FruitsDetailsPage> createState() => _FruitsDetailsPageState();
+  State<ProductDetailsPage> createState() => _ProductDetailsPageState();
 }
 
-class _FruitsDetailsPageState extends State<FruitsDetailsPage> {
+class _ProductDetailsPageState extends State<ProductDetailsPage> {
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.sizeOf(context).height;
@@ -43,14 +43,17 @@ class _FruitsDetailsPageState extends State<FruitsDetailsPage> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Container(
-                                  height: 40,
-                                  width: 40,
-                                  decoration: const BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: Colors.white,
+                                GestureDetector(
+                                  onTap: () => Navigator.of(context).pop(),
+                                  child: Container(
+                                    height: 40,
+                                    width: 40,
+                                    decoration: const BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Colors.white,
+                                    ),
+                                    child: const Icon(Icons.arrow_back_ios),
                                   ),
-                                  child: const Icon(Icons.arrow_back_ios),
                                 ),
                                 const Text('Details',
                                 style: TextStyle(
@@ -241,7 +244,7 @@ class _FruitsDetailsPageState extends State<FruitsDetailsPage> {
 
                                             RatingBarIndicator(
                                               rating: 5,
-                                              itemBuilder: (context, index) => Icon(
+                                              itemBuilder: (context, index) => const Icon(
                                                 Icons.star,
                                                 color: Colors.amber,
                                               ),
@@ -276,7 +279,7 @@ class _FruitsDetailsPageState extends State<FruitsDetailsPage> {
                                       child: Container(
                                         height: 30,
                                         width: 30,
-                                        decoration: BoxDecoration(
+                                        decoration: const BoxDecoration(
                                             color: AppColors.primaryColor,
                                             borderRadius: BorderRadius.only(
                                                 bottomLeft: Radius.circular(5),
@@ -285,7 +288,7 @@ class _FruitsDetailsPageState extends State<FruitsDetailsPage> {
                                                 bottomRight: Radius.circular(10)
                                             )
                                         ),
-                                        child: Icon(Icons.add, color: Colors.white,),
+                                        child: const Icon(Icons.add, color: Colors.white,),
                                       ),
                                     ),
                                   ),
@@ -301,11 +304,11 @@ class _FruitsDetailsPageState extends State<FruitsDetailsPage> {
                                       child: Container(
                                         height: 35,
                                         width: 35,
-                                        decoration: BoxDecoration(
+                                        decoration: const BoxDecoration(
                                             color: AppColors.primaryColor,
                                             shape: BoxShape.circle
                                         ),
-                                        child: Icon(Icons.favorite, color: Colors.white,),
+                                        child: const Icon(Icons.favorite, color: Colors.white,),
                                       ),
                                     ),
                                   )

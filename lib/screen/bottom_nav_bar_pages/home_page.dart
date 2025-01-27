@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:gap/gap.dart';
 
+import '../category/category_details_page.dart';
+import '../product/product_details_page.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -28,199 +31,200 @@ class _HomePageState extends State<HomePage> {
     var width = MediaQuery.sizeOf(context).width;
     return Scaffold(
       backgroundColor: const Color(0xffF6FBF7),
-      body: Container(
-        child: Column(
-          children: [
-            Expanded(
-                flex: 3,
-                child: Container(
-                  padding: const EdgeInsets.all(20),
-                  width: width,
-                  decoration: const BoxDecoration(
-                    color: AppColors.primaryColor
-                  ),
-                  child: Column(
-                    children: [
+      body: Column(
+        children: [
+          Expanded(
+              flex: 3,
+              child: Container(
+                padding: const EdgeInsets.all(20),
+                width: width,
+                decoration: const BoxDecoration(
+                  color: AppColors.primaryColor
+                ),
+                child: Column(
+                  children: [
 
-                      const Gap(18),
+                    const Gap(18),
 
-                      const Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          CircleAvatar(
-                            backgroundColor: Colors.white12,
-                            child: Icon(Icons.arrow_back_ios_new_outlined, color: Colors.white,),
-                          ),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: Colors.white12,
+                          child: Icon(Icons.arrow_back_ios, color: Colors.white,),
+                        ),
 
-                          Column(
+                        Column(
+                          children: [
+                          Row(
                             children: [
-                            Row(
-                              children: [
-                                Icon(Icons.location_on_outlined, color: Colors.white,),
-                                Gap(7),
-                                Text('Location', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),)
-                              ],
-                            )
+                              Icon(Icons.location_on_outlined, color: Colors.white,),
+                              Gap(7),
+                              Text('Location', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),)
                             ],
+                          )
+                          ],
+                        ),
+
+                        CircleAvatar(
+                          backgroundColor: Colors.white12,
+                          child: Icon(Icons.notifications_active, color: Colors.white,),
+                        )
+                      ],
+                    ),
+
+                    const Gap(10),
+
+                    const Text('Baridhara, Dhaka',
+                    textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                        color: Colors.white
+                      ),
+                    ),
+
+                    const Gap(20),
+
+                    Container(
+                      height: 60,
+                      width: width,
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(35),
+                      ),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            flex:7,
+                            child: TextFormField(
+                              controller: searchController,
+                              decoration: const InputDecoration(
+                                border: InputBorder.none,
+                                hintText: 'Search Your Groceries',
+                                hintStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.w500, color: Colors.black45)
+                              ),
+                            ),
                           ),
 
-                          CircleAvatar(
-                            backgroundColor: Colors.white12,
-                            child: Icon(Icons.notifications_active, color: Colors.white,),
+                          Expanded(
+                            flex: 1,
+                            child: IconButton(
+                                onPressed: (){},
+                                icon: const Icon(
+                                  Icons.search_outlined, color: AppColors.primaryColor,)
+                            ),
                           )
+
                         ],
                       ),
-
-                      const Gap(10),
-
-                      const Text('Baridhara, Dhaka',
-                      textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                          color: Colors.white
-                        ),
-                      ),
-
-                      const Gap(20),
-
-                      Container(
-                        height: 60,
-                        width: width,
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(35),
-                        ),
-                        child: Row(
-                          children: [
-                            Expanded(
-                              flex:7,
-                              child: TextFormField(
-                                controller: searchController,
-                                decoration: const InputDecoration(
-                                  border: InputBorder.none,
-                                  hintText: 'Search Your Groceries',
-                                  hintStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.w500, color: Colors.black45)
-                                ),
-                              ),
-                            ),
-
-                            Expanded(
-                              flex: 1,
-                              child: IconButton(
-                                  onPressed: (){},
-                                  icon: const Icon(
-                                    Icons.search_outlined, color: AppColors.primaryColor,)
-                              ),
-                            )
-
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
+                    )
+                  ],
                 ),
-            ),
+              ),
+          ),
 
-            const Gap(10),
+          const Gap(10),
 
-            Expanded(
-              flex: 6,
-              child: Container(
-                height: height,
-                width: width,
-                padding: const EdgeInsets.all(10),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.vertical,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        height: 190,
-                        width: width,
-                        padding: const EdgeInsets.all(20),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(25),
-                          color: AppColors.primaryColor,
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const Text('Get 40% discount\non your first order\nfrom app.',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                                fontSize: 20,
+          Expanded(
+            flex: 6,
+            child: Container(
+              height: height,
+              width: width,
+              padding: const EdgeInsets.all(10),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      height: 190,
+                      width: width,
+                      padding: const EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25),
+                        color: AppColors.primaryColor,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text('Get 40% discount\non your first order\nfrom app.',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              fontSize: 20,
+                              ),
+                              ),
+
+                              const Gap(20),
+
+                              Container(
+                                height: 40,
+                                width: 120,
+                                decoration: BoxDecoration(
+                                  color: AppColors.appWhite.withOpacity(0.4),
+                                  borderRadius: BorderRadius.circular(20),
                                 ),
-                                ),
-                            
-                                const Gap(20),
-                            
-                                Container(
-                                  height: 40,
-                                  width: 120,
-                                  decoration: BoxDecoration(
-                                    color: AppColors.appWhite.withOpacity(0.4),
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  child: const Center(
-                                    child: Text('Shop Now',
-                                      style: TextStyle(
-                                        fontSize: 18,
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w500
-                                      ),
+                                child: const Center(
+                                  child: Text('Shop Now',
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w500
                                     ),
                                   ),
-                                )
-                              ],
-                            ),
-                            Image.asset('assets/images/fruits.png')
-                          ],
-                        ),
-                      ),
-
-                      const Gap(5),
-
-                      Align(
-                        alignment: Alignment.center,
-                        child: SizedBox(
-                          height: 30,
-                          child: ListView.builder(
-                            scrollDirection: Axis.horizontal,
-                            shrinkWrap: true,
-                            itemCount: 4,
-                              itemBuilder: (context, index) {
-                              return const Padding(
-                                padding: EdgeInsets.only(right: 8.0),
-                                child: CircleAvatar(
-                                  radius: 8.0,
-                                  backgroundColor: AppColors.primaryColor,
                                 ),
-                              );
-                              },
+                              )
+                            ],
                           ),
+                          Image.asset('assets/images/fruits.png')
+                        ],
+                      ),
+                    ),
+
+                    const Gap(5),
+
+                    Align(
+                      alignment: Alignment.center,
+                      child: SizedBox(
+                        height: 30,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          shrinkWrap: true,
+                          itemCount: 4,
+                            itemBuilder: (context, index) {
+                            return const Padding(
+                              padding: EdgeInsets.only(right: 8.0),
+                              child: CircleAvatar(
+                                radius: 8.0,
+                                backgroundColor: AppColors.primaryColor,
+                              ),
+                            );
+                            },
                         ),
                       ),
+                    ),
 
-                      const Gap(10),
+                    const Gap(10),
 
-                      const Text('Categories', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: AppColors.appBlack),),
+                    const Text('Categories', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: AppColors.appBlack),),
 
-                      const Gap(5),
+                    const Gap(5),
 
-                      SizedBox(
-                        height: 140,
-                        child: ListView.builder(
-                          itemCount: 10,
-                            shrinkWrap: true,
-                            scrollDirection: Axis.horizontal,
-                            itemBuilder: (context, index) {
-                              return Container(
+                    SizedBox(
+                      height: 140,
+                      child: ListView.builder(
+                        itemCount: 10,
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (context, index) {
+                            return GestureDetector(
+                              onTap: ()=> Navigator.of(context).push(MaterialPageRoute(builder: (context) => const CategoryDetailsPage(),)),
+                              child: Container(
                                 height: 150,
                                 width: 120,
                                 margin: const EdgeInsets.only(
@@ -256,25 +260,28 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                   ],
                                 ),
-                              );
-                            },
-                        ),
+                              ),
+                            );
+                          },
                       ),
+                    ),
 
-                      const Gap(20),
+                    const Gap(20),
 
-                      const Text('Popluar', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: AppColors.appBlack),),
+                    const Text('Popluar', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: AppColors.appBlack),),
 
-                      const Gap(5),
+                    const Gap(5),
 
-                      SizedBox(
-                        height: 180,
-                        child: ListView.builder(
-                          itemCount: 10,
-                          shrinkWrap: true,
-                          scrollDirection: Axis.horizontal,
-                          itemBuilder: (context, index) {
-                            return Stack(
+                    SizedBox(
+                      height: 180,
+                      child: ListView.builder(
+                        itemCount: 10,
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) {
+                          return GestureDetector(
+                            onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ProductDetailsPage())),
+                            child: Stack(
                               children: [
                                 Container(
                                   height: 200,
@@ -316,7 +323,7 @@ class _HomePageState extends State<HomePage> {
 
                                           RatingBarIndicator(
                                             rating: 5,
-                                            itemBuilder: (context, index) => Icon(
+                                            itemBuilder: (context, index) => const Icon(
                                               Icons.star,
                                               color: Colors.amber,
                                             ),
@@ -351,7 +358,7 @@ class _HomePageState extends State<HomePage> {
                                       child: Container(
                                         height: 30,
                                         width: 30,
-                                        decoration: BoxDecoration(
+                                        decoration: const BoxDecoration(
                                           color: AppColors.primaryColor,
                                           borderRadius: BorderRadius.only(
                                             bottomLeft: Radius.circular(5),
@@ -360,11 +367,10 @@ class _HomePageState extends State<HomePage> {
                                             bottomRight: Radius.circular(10)
                                           )
                                         ),
-                                        child: Icon(Icons.add, color: Colors.white,),
+                                        child: const Icon(Icons.add, color: Colors.white,),
                                       ),
                                     ),
                                 ),
-
 
                                 Positioned(
                                   top: 15,
@@ -376,27 +382,27 @@ class _HomePageState extends State<HomePage> {
                                     child: Container(
                                       height: 35,
                                       width: 35,
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                           color: AppColors.primaryColor,
                                         shape: BoxShape.circle
                                       ),
-                                      child: Icon(Icons.favorite, color: Colors.white,),
+                                      child: const Icon(Icons.favorite, color: Colors.white,),
                                     ),
                                   ),
                                 )
                               ],
-                            );
-                          },
-                        ),
+                            ),
+                          );
+                        },
                       ),
-                      const Gap(20),
-                    ],
-                  ),
+                    ),
+                    const Gap(20),
+                  ],
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

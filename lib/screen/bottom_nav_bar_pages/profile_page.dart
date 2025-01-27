@@ -1,4 +1,3 @@
-import 'package:eco_eats/resource/app_colors/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {

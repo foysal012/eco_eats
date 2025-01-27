@@ -34,8 +34,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
         backgroundColor: AppColors.primaryColor,
         selectedItemColor: AppColors.appWhite,
         unselectedItemColor: Colors.white54,
-        selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
-        unselectedLabelStyle: TextStyle(color: Colors.white),
+        selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+        unselectedLabelStyle: const TextStyle(color: Colors.white),
         currentIndex: currentIndex,
         onTap: (value) {
           setState(() {

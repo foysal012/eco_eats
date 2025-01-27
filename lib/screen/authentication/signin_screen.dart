@@ -1,4 +1,3 @@
-import 'package:eco_eats/screen/authentication/signup_screen.dart';
 import 'package:eco_eats/screen/bottom_nav_bar/bottom_nav_bar.dart';
 import 'package:eco_eats/widget/custom_password_text_field_widget.dart';
 import 'package:flutter/material.dart';
