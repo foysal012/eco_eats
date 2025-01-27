@@ -144,35 +144,42 @@ class _HomePageState extends State<HomePage> {
                           borderRadius: BorderRadius.circular(25),
                           color: AppColors.primaryColor,
                         ),
-                        child: Column(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            const Text('Get 40% discount\non your first order\nfrom app.',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                            fontSize: 20,
-                            ),
-                            ),
-
-                            const Gap(20),
-
-                            Container(
-                              height: 40,
-                              width: 120,
-                              decoration: BoxDecoration(
-                                color: AppColors.appWhite.withOpacity(0.4),
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: const Center(
-                                child: Text('Shop Now',
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w500
-                                  ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text('Get 40% discount\non your first order\nfrom app.',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                                fontSize: 20,
                                 ),
-                              ),
-                            )
+                                ),
+                            
+                                const Gap(20),
+                            
+                                Container(
+                                  height: 40,
+                                  width: 120,
+                                  decoration: BoxDecoration(
+                                    color: AppColors.appWhite.withOpacity(0.4),
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: const Center(
+                                    child: Text('Shop Now',
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w500
+                                      ),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                            Image.asset('assets/images/fruits.png')
                           ],
                         ),
                       ),
