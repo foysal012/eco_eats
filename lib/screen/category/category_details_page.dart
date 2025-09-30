@@ -327,6 +327,57 @@ class _CategoryDetailsPageState extends State<CategoryDetailsPage> {
           ],
         ),
       ),
+      bottomNavigationBar: SafeArea(
+          child: Container(
+            height: 80,
+            padding: EdgeInsets.symmetric(horizontal: 10.0),
+            decoration: BoxDecoration(
+              color: AppColors.appBodyBackground,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('Total Price',
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.black38,
+                        fontWeight: FontWeight.w700
+                      ),
+                    ),
+                    Text('\$2.99',
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: AppColors.primaryColor,
+                          fontWeight: FontWeight.w700
+                      ),
+                    ),
+                  ],
+                ),
+                Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 28.0,
+                    vertical: 14.0
+                  ),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30.0),
+                    color: AppColors.primaryColor,
+                  ),
+                  child: Text('Add to Cart',
+                    style: TextStyle(
+                        fontSize: 14,
+                        color: AppColors.appWhite,
+                        fontWeight: FontWeight.w700
+                    ),
+                  ),
+                )
+              ],
+            ),
+          )
+      ),
     );
   }
 }
