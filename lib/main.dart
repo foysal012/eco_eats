@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'screen/bottom_nav_bar/bottom_nav_bar.dart';
 import 'screen/category/category_details_page.dart';
 import 'screen/splash/splash_screen.dart';
 
@@ -26,8 +27,8 @@ class MyApp extends StatelessWidget {
       // home: const SplashScreen(),
       // home: const SignInScreen(),
       // home: const SignUpScreen(),
-      //home: const BottomNavBar(),
-      home: const CategoryDetailsPage(),
+      home: const BottomNavBar(),
+      // home: const CategoryDetailsPage(),
     );
   }
 }
