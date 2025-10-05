@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'screen/bottom_nav_bar/bottom_nav_bar.dart';
+import 'screen/checkout/checkout_screen.dart';
 import 'screen/splash/splash_screen.dart';
 
 void main() {
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       // home: const SplashScreen(),
-      home: const BottomNavBar(),
+      // home: const BottomNavBar(),
+      home: const CheckoutScreen(),
     );
   }
 }
