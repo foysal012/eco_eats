@@ -27,11 +27,10 @@ class _ProfilePageState extends State<ProfilePage> {
               const CircleAvatar(
                 radius: 50.0,
                 backgroundImage: AssetImage('assets/images/profile.jpeg'),
-                // child: Image.asset('assets/images/profile.jpeg'),
               ),
               const Gap(10.0),
           
-              const Text("Foysal Joarder"),
+              const Text("Margot Robby"),
               const Gap(5.0),
           
               const Text("foysal66@gmail.com"),
